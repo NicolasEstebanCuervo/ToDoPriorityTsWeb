@@ -9,6 +9,7 @@ const ContenedorFormulario = styled.div`
   border-radius: 10px;
   padding: 10px 25px;
   box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
+  font-family: Roboto, sans-serif;
   @media (max-width: 300px) {
     padding: 1vh 10vw;
   }
@@ -140,7 +141,7 @@ function TareaFormulario() {
       hora: null
     });
 
-    manejarEnvioFnc();
+    manejarEnvioFnc()
     ponerHiddenFnc();
   };
 
@@ -193,5 +194,4 @@ function TareaFormulario() {
     </ContenedorFormulario>
   );
 }
-
 export default TareaFormulario;

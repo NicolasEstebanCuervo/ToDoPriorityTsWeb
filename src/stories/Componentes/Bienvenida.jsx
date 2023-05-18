@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled'
 
 const ContenedorBienvenida = styled.div`
+  margin:auto;
   width: 70vw;
   position: relative;
-  height: 200px;
+  height: auto;
+  padding: 10% 0;
   background: #4d82bc;
   color: #fff;
   text-align: center;
@@ -31,9 +33,9 @@ const TextoBienvenida = styled.h1`
   }
 `
 
-const Bienvenida = ({ textoBienvenida}) => {
+const Bienvenida = ({ textoBienvenida, hidden}) => {
   return (
-    <ContenedorBienvenida>
+    <ContenedorBienvenida hidden={hidden}>
       <TextoBienvenida>{textoBienvenida}</TextoBienvenida>
     </ContenedorBienvenida>
   );

@@ -1,16 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { BiCheck, BiX } from 'react-icons/bi';
 
 const ContenedorTarea = styled.div`
   width: 600px;
   min-height: 250px;
-  margin: 20% 0;
+  margin: 20% auto;
   display: flex;
   justify-content: space-between;
   border-radius: 7px;
   cursor: pointer;
   position: relative;
-  background: #000;
+  color: #fff;
   -webkit-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
   -moz-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
   box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
@@ -18,6 +20,11 @@ const ContenedorTarea = styled.div`
     opacity: 1;
     transition: opacity 0.4s ease;
   }
+
+  &.hover .icono{
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }   
 
   .icono {
     opacity: 0;
@@ -111,10 +118,10 @@ const Descripcion = styled.h1`
   }
 `;
 
-function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc }) {
+function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc, className }) {
   return (
     <ContenedorTarea
-      className={`tarea_contenedor ${time} ${completada ? `completada_${time}` : ''}`}
+      className={`tarea_contenedor ${className} ${time} ${completada ? `completada_${time}` : ''} `}
       completada={completada}
       time={time}
       prioridad={prioridad}
@@ -123,8 +130,8 @@ function Tarea({ id, descripcion, time, titulo, completada, prioridad, completar
         <ContenedorTitulo>
           <Titulo>{titulo}</Titulo>
           <ContenedorIconos>
-            <i className="icono bi bi-check" onClick={() => completarTareaFnc(id)}></i>
-            <i className="icono bi bi-x" onClick={() => eliminarTareaFnc(id)}></i>
+            <BiCheck className="icono" onClick={() => completarTareaFnc(id)} />
+            <BiX className="icono" onClick={() => eliminarTareaFnc(id)} />
           </ContenedorIconos>
         </ContenedorTitulo>
         <ContenedorDescripcion>
@@ -134,5 +141,12 @@ function Tarea({ id, descripcion, time, titulo, completada, prioridad, completar
     </ContenedorTarea>
   );
 }
+
+Tarea.propTypes = {
+  titulo: PropTypes.string.isRequired,
+  descripcion: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  completada: PropTypes.bool.isRequired,
+};
 
 export default Tarea;

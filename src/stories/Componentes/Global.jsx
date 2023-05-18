@@ -1,18 +1,18 @@
 import React from 'react';
 import Hidden from './Hidden';
-import Bienvenida from '../stories/Bienvenida';
+import Bienvenida from './Bienvenida';
 import ListaDeTareas from './ListaDeTareas';
 import { useTareaContext } from './FunctionContext';
 
 const Global = () => {
-  const { bienvenida } = useTareaContext();
+  const { bienvenida, quitarHiddenFnc } = useTareaContext();
   return (
     <>
       <div>
         <ListaDeTareas />
-        <Hidden />
+        <Hidden onClick={quitarHiddenFnc} />
+        <Bienvenida hidden={bienvenida} textoBienvenida='No hay tareas por ahora :)'/>
       </div>
-      <Bienvenida hidden={bienvenida} textoBienvenida='No hay tareas por ahora :)'/>
     </>
   );
 };

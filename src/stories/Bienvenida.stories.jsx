@@ -1,11 +1,9 @@
 
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
-import Bienvenida from './Bienvenida';
+import Bienvenida from './Componentes/Bienvenida';
 
 export default {
-  title: "Componentes/Contenedor",
+  title: "Contenedor",
   component: Bienvenida,
   args: {
     textoBienvenida: "No hay tareas por ahora :)"
