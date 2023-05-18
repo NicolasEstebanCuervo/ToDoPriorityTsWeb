@@ -1,0 +1,74 @@
+.contenedor_formulario {
+  text-align: center;
+  background: #4d82bc;
+  position: relative;
+  border-radius: 10px;
+  padding: 20px 20px 30px;
+  box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
+}
+
+.tarea_formulario {
+  max-width: 430px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulo_formulario {
+  font-size: 35px;
+}
+
+.contenedor_tareas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor_input_individual{
+  margin: 10px;
+}
+
+.input {
+  margin: 5px 0;
+  width: 350px;
+  font-size: 15px;
+  background-color: #DEE5FF;
+  padding: 14px 32px 14px 16px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.boton_enviar {
+  margin: 10px;
+  display: inline-block;
+  padding: 15px 20px;
+  width: 70%;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #005187;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.boton_enviar:hover {
+  background-color: #0e5e92;
+}
+
+.icono_salir_formulario {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.error_message {
+  color: #fff;
+  font-size: 14px;
+}
