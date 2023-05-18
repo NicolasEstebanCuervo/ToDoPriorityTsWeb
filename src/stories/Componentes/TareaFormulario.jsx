@@ -194,4 +194,9 @@ function TareaFormulario() {
     </ContenedorFormulario>
   );
 }
+
+TareaFormulario.propTypes = {
+
+};
+
 export default TareaFormulario;
