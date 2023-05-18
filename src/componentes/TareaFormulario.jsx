@@ -1,6 +1,100 @@
 import React, { useState } from 'react';
-import '../Hojas_De_Estilo/TareaFormulario.css';
 import { useTareaContext } from './FunctionContext';
+import styled from '@emotion/styled'
+
+const ContenedorFormulario = styled.div`
+  text-align: center;
+  background: #4d82bc;
+  position: relative;
+  border-radius: 10px;
+  padding: 10px 25px;
+  box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
+  @media (max-width: 300px) {
+    padding: 1vh 10vw;
+  }
+`
+
+const Formulario = styled.form`
+  max-width: 430px;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const TituloFormulario = styled.h1`
+  font-size: 30px;
+  @media (max-width: 500px) {
+    font-size: 7vw;
+  }
+`
+
+const ContenedorInputs = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ContenedorInputIndividual = styled.div`
+  margin: 5%;
+`
+
+const Input = styled.input`
+  margin: 5px 0;
+  width: 350px;
+  font-size: 15px;
+  background-color: #DEE5FF;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  @media (max-width: 500px) {
+    width: 70vw;
+    font-size: 4vw;
+  }
+  @media (max-width: 300px) {
+    padding: 1vh 2vw;
+  }
+`
+
+const Error = styled.div`
+  color: #fff;
+  font-size: 14px;
+`
+
+const BotonEnviar = styled.button`
+  margin: 2%;
+  display: inline-block;
+  padding: 4% 5vw;
+  width: 70%;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #005187;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover{
+    background-color: #0e5e92;
+  }
+  @media (max-width: 400px) {
+    font-size: 6vw;
+  }
+`
+
+const IconoSalirFormulario = styled.i`
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  font-size: 35px;
+  cursor: pointer;
+  @media (max-width: 400px) {
+    font-size: 10vw;
+    top: 3%;
+  }
+`
 
 function TareaFormulario() {
   const {
@@ -51,12 +145,12 @@ function TareaFormulario() {
   };
 
   return (
-    <div className='contenedor_formulario' hidden={hidden}>
-      <form className='tarea_formulario' onSubmit={handleSubmit} noValidate>
-        <h1>To-Do List</h1>
-        <div className='contenedor_tareas'>
-          <div className='contenedor_input_individual'>
-            <input
+    <ContenedorFormulario hidden={hidden}>
+      <Formulario onSubmit={handleSubmit} noValidate>
+        <TituloFormulario>To-Do List</TituloFormulario>
+        <ContenedorInputs>
+          <ContenedorInputIndividual className='contenedor_input_individual'>
+            <Input
               className='input'
               type='text'
               placeholder='Escribe el título de la tarea'
@@ -64,10 +158,11 @@ function TareaFormulario() {
               value={titulo}
               onChange={cambioTituloFnc}
             />
-            {errors.titulo && <div className="error_message">{errors.titulo}</div>}
-          </div>
-          <div className='contenedor_input_individual'>
-            <input
+            {errors.titulo && <Error className="error_message">{errors.titulo}</Error>}
+          </ContenedorInputIndividual>
+
+          <ContenedorInputIndividual className='contenedor_input_individual'>
+            <Input
               className='input'
               type='text'
               placeholder='Escribe la descripción de la tarea'
@@ -75,10 +170,11 @@ function TareaFormulario() {
               value={descripcion}
               onChange={cambioDescripcionFnc}
             />
-            {errors.descripcion && <div className="error_message">{errors.descripcion}</div>}
-          </div>
-          <div className='contenedor_input_individual'>
-            <input
+            {errors.descripcion && <Error className="error_message">{errors.descripcion}</Error>}
+          </ContenedorInputIndividual>
+
+          <ContenedorInputIndividual className='contenedor_input_individual'>
+            <Input
               className='input'
               type='time'
               placeholder='Selecciona la hora de la tarea'
@@ -86,16 +182,15 @@ function TareaFormulario() {
               value={hora}
               onChange={cambioTimeFnc}
             />
-            {errors.hora && <div className="error_message">{errors.hora}</div>}
-          </div>
-        </div>
-        <button type="submit" className='boton_enviar'>
-          Agregar tarea
-        </button>
+            {errors.hora && <Error className="error_message">{errors.hora}</Error>}
+          </ContenedorInputIndividual>
+        </ContenedorInputs>
 
-        <i className="icono_salir_formulario bi bi-x" onClick={ponerHiddenFnc}></i>
-      </form>
-    </div>
+        <BotonEnviar type="submit" className='boton_enviar'>Agregar tarea</BotonEnviar>
+
+        <IconoSalirFormulario className="icono_salir_formulario bi bi-x" onClick={ponerHiddenFnc}></IconoSalirFormulario>
+      </Formulario>
+    </ContenedorFormulario>
   );
 }
 
