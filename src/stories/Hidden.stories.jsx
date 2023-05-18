@@ -1,17 +1,18 @@
 import React from 'react';
 import Hidden from './Componentes/Hidden';
+import { action } from '@storybook/addon-actions';
 
 export default {
-  title: "Hidden",
+  title: 'Hidden',
   component: Hidden,
 };
 
-const Template = (args) => <Hidden {...args} />;
+const Template = (args) => <Hidden {...args} onClick={action('Se abrió el formulario')} />;
 
 export const Default = Template.bind({});
 Default.args = {};
 
 export const HoverActive = Template.bind({});
 HoverActive.args = {
-  className: 'hover'
+  className: 'hover',
 };

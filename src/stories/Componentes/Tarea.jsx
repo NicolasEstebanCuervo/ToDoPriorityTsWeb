@@ -13,6 +13,7 @@ const ContenedorTarea = styled.div`
   cursor: pointer;
   position: relative;
   color: #fff;
+  font-family: Roboto, sans-serif;
   -webkit-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
   -moz-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
   box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
@@ -143,9 +144,9 @@ function Tarea({ id, descripcion, time, titulo, completada, prioridad, completar
 }
 
 Tarea.propTypes = {
-  titulo: PropTypes.string.isRequired,
   descripcion: PropTypes.string.isRequired,
   time: PropTypes.string.isRequired,
+  titulo: PropTypes.string.isRequired,
   completada: PropTypes.bool.isRequired,
 };
 

@@ -9,10 +9,33 @@ const ContenedorListaDeTareas = styled.div`
 `
 
 function ListaDeTareas() {
-  const { tareas, eliminarTareaFnc, completarTareaFnc, hidden } = useTareaContext();
+  const {
+    manejarEnvioFnc,
+    descripcion,
+    cambioTimeFnc,
+    titulo,
+    hora,
+    cambioDescripcionFnc,
+    cambioTituloFnc,
+    ponerHiddenFnc,
+    hidden,
+    tareas,
+    eliminarTareaFnc,
+    completarTareaFnc,
+  } = useTareaContext();
   return (
     <div>
-      <TareaFormulario />
+      <TareaFormulario 
+        manejarEnvioFnc={manejarEnvioFnc} 
+        descripcion={descripcion} 
+        cambioTimeFnc={cambioTimeFnc} 
+        titulo={titulo}
+        hora={hora}
+        cambioDescripcionFnc={cambioDescripcionFnc}
+        cambioTituloFnc={cambioTituloFnc}
+        ponerHiddenFnc={ponerHiddenFnc}
+        hidden={hidden}
+        />
       <ContenedorListaDeTareas hidden={!hidden}>
         {tareas.map((tarea) => (
           <Tarea

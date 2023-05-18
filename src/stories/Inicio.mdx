@@ -1,0 +1,112 @@
+import { Meta } from '@storybook/blocks';
+import Code from './assets/code-brackets.svg';
+import Colors from './assets/colors.svg';
+import Comments from './assets/comments.svg';
+import Direction from './assets/direction.svg';
+import Flow from './assets/flow.svg';
+import Plugin from './assets/plugin.svg';
+import Repo from './assets/repo.svg';
+import StackAlt from './assets/stackalt.svg';
+
+<Meta title="Example/Introduction" />
+
+<style>
+  {/* Estilos CSS aquí */}
+</style>
+
+# Bienvenido
+
+Storybook te ayuda a construir componentes de UI de forma aislada de la lógica de tu aplicación, datos y contexto. Esto facilita el desarrollo de estados difíciles de alcanzar. Guarda estos estados de UI como **stories** para revisar durante el desarrollo, pruebas o control de calidad.
+
+Explora ejemplos de stories navegando por ellos en la barra lateral. Puedes ver el código en el directorio `stories` para aprender cómo funcionan. Recomendamos construir interfaces de usuario utilizando un enfoque [**component-driven**](https://componentdriven.org), comenzando con componentes atómicos y terminando en páginas.
+
+<div className="subheading">Configure</div>
+
+<div className="link-list">
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/addons/addon-types"
+    target="_blank"
+  >
+    <img src={Plugin} alt="plugin" />
+    <span>
+      <strong>Presets para herramientas populares</strong>
+      Configuración sencilla para TypeScript, SCSS y más.
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/configure/webpack"
+    target="_blank"
+  >
+    <img src={StackAlt} alt="Build" />
+    <span>
+      <strong>Configuración de compilación</strong>
+      Cómo personalizar webpack y Babel
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/configure/styling-and-css"
+    target="_blank"
+  >
+    <img src={Colors} alt="colors" />
+    <span>
+      <strong>Estilos</strong>
+      Cómo cargar y configurar bibliotecas de CSS
+    </span>
+  </a>
+  <a
+    className="link-item"
+    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
+    target="_blank"
+  >
+    <img src={Flow} alt="flow" />
+    <span>
+      <strong>Datos</strong>
+      Proveedores y simulación de datos para bibliotecas de datos
+    </span>
+  </a>
+</div>
+
+<div className="subheading">Learn</div>
+
+<div className="link-list">
+  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
+    <img src={Repo} alt="repo" />
+    <span>
+      <strong>Documentación de Storybook</strong>
+      Configuración, personalización y extensión
+    </span>
+  </a>
+  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
+    <img src={Direction} alt="direction" />
+    <span>
+      <strong>Guías detalladas</strong>
+      Mejores prácticas de equipos líderes
+    </span>
+  </a>
+  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
+    <img src={Code} alt="code" />
+    <span>
+      <strong>Proyecto en GitHub</strong>
+      Ver el código fuente y añadir problemas
+    </span>
+  </a>
+  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
+    <img src={Comments} alt="comments" />
+    <span>
+      <strong>Chat en Discord</strong>
+      Chatea con los responsables y la comunidad
+    </span>
+  </a>
+</div>
+
+<div className="tip-wrapper">
+  <span className="tip">Consejo</span> Editar el Markdown en{' '}
+  <code>stories/Introduction.stories.mdx</code>
+</div>
+
+## To-Do List con Prioridades
+
+Aquí puedes encontrar una lista de tareas (to-do list) con prioridades basadas en el tiempo. Puedes utilizar esto como referencia para desarrollar tus propias funcionalidades.

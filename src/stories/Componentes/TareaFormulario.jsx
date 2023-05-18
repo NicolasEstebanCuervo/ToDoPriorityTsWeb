@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { useTareaContext } from './FunctionContext';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled'
+import { BiX } from 'react-icons/bi';
 
 const ContenedorFormulario = styled.div`
+  margin: auto;
+  max-width: 430px;
   text-align: center;
+  color:#fff;
   background: #4d82bc;
   position: relative;
   border-radius: 10px;
@@ -16,7 +20,6 @@ const ContenedorFormulario = styled.div`
 `
 
 const Formulario = styled.form`
-  max-width: 430px;
   padding: 5% 0;
   display: flex;
   flex-direction: column;
@@ -72,13 +75,22 @@ const BotonEnviar = styled.button`
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  background-color: #005187;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  &:hover{
-    background-color: #0e5e92;
+  &:hover {
+    background-color: #0c3755;
+    transition: background-color 0.4s ease; 
+  }
+
+  &:not(:hover) {
+    background-color: #005187;
+    transition: background-color 0.4s ease; 
+  }
+  &.hover{
+    transition: background-color 0.4s ease; 
+    background-color: #0c3755;
   }
   @media (max-width: 400px) {
     font-size: 6vw;
@@ -97,19 +109,7 @@ const IconoSalirFormulario = styled.i`
   }
 `
 
-function TareaFormulario() {
-  const {
-    manejarEnvioFnc,
-    descripcion,
-    cambioTimeFnc,
-    titulo,
-    hora,
-    cambioDescripcionFnc,
-    cambioTituloFnc,
-    ponerHiddenFnc,
-    hidden,
-  } = useTareaContext();
-
+function TareaFormulario({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,cambioTituloFnc,ponerHiddenFnc,hidden,cambioDescripcionFnc,className}) {
   const [errors, setErrors] = useState({
     titulo: null,
     descripcion: null,
@@ -150,7 +150,7 @@ function TareaFormulario() {
       <Formulario onSubmit={handleSubmit} noValidate>
         <TituloFormulario>To-Do List</TituloFormulario>
         <ContenedorInputs>
-          <ContenedorInputIndividual className='contenedor_input_individual'>
+          <ContenedorInputIndividual>
             <Input
               className='input'
               type='text'
@@ -159,10 +159,10 @@ function TareaFormulario() {
               value={titulo}
               onChange={cambioTituloFnc}
             />
-            {errors.titulo && <Error className="error_message">{errors.titulo}</Error>}
+            {errors.titulo && <Error>{errors.titulo}</Error>}
           </ContenedorInputIndividual>
 
-          <ContenedorInputIndividual className='contenedor_input_individual'>
+          <ContenedorInputIndividual>
             <Input
               className='input'
               type='text'
@@ -171,10 +171,10 @@ function TareaFormulario() {
               value={descripcion}
               onChange={cambioDescripcionFnc}
             />
-            {errors.descripcion && <Error className="error_message">{errors.descripcion}</Error>}
+            {errors.descripcion && <Error>{errors.descripcion}</Error>}
           </ContenedorInputIndividual>
 
-          <ContenedorInputIndividual className='contenedor_input_individual'>
+          <ContenedorInputIndividual >
             <Input
               className='input'
               type='time'
@@ -183,20 +183,20 @@ function TareaFormulario() {
               value={hora}
               onChange={cambioTimeFnc}
             />
-            {errors.hora && <Error className="error_message">{errors.hora}</Error>}
+            {errors.hora && <Error>{errors.hora}</Error>}
           </ContenedorInputIndividual>
         </ContenedorInputs>
 
-        <BotonEnviar type="submit" className='boton_enviar'>Agregar tarea</BotonEnviar>
+        <BotonEnviar type="submit" className={className}>Agregar tarea</BotonEnviar>
 
-        <IconoSalirFormulario className="icono_salir_formulario bi bi-x" onClick={ponerHiddenFnc}></IconoSalirFormulario>
+        <IconoSalirFormulario className="icono_salir_formulario" onClick={ponerHiddenFnc}><BiX /></IconoSalirFormulario>
       </Formulario>
     </ContenedorFormulario>
   );
-}
+} 
 
 TareaFormulario.propTypes = {
-
+  errors: PropTypes.bool.isRequired
 };
 
 export default TareaFormulario;

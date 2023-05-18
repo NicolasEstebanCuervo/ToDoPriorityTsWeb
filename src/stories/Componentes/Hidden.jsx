@@ -1,5 +1,6 @@
 import React from 'react';
 import { RiAddFill } from 'react-icons/ri';
+import { action } from '@storybook/addon-actions';
 import styled from '@emotion/styled';
 
 const IconoHidden = styled.span`
@@ -30,7 +31,7 @@ const Hidden = ({ className, onClick }) => {
   return (
     <>
       <IconoHidden className={className}>
-        <RiAddFill onClick={onClick}/>
+        <RiAddFill onClick={onClick} />
       </IconoHidden>
     </>
   );
