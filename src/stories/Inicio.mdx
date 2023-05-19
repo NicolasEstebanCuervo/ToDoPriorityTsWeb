@@ -1,112 +1,90 @@
 import { Meta } from '@storybook/blocks';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
+import PrioridadAlta from "./assets/PrioridadAlta.svg"
+import Reloj from "./assets/Reloj.svg"
+import Planta from "./assets/Planta.svg"
 
-<Meta title="Example/Introduction" />
+<Meta title="Documentacion" />
 
-<style>
-  {/* Estilos CSS aquí */}
-</style>
+# To - Do List con prioridad de tiempo.
 
-# Bienvenido
+Este es un Todo List diseñado para simplificar la gestión de tareas. Permite a los usuarios organizar sus actividades diarias de manera eficiente, asignando prioridades basadas en el tiempo. Con un enfoque intuitivo y una interfaz fácil de usar, esta aplicación facilita el seguimiento y completado de tareas importantes. ¡Mejora tu productividad y alcanza tus metas con este práctico Todo List!
 
-Storybook te ayuda a construir componentes de UI de forma aislada de la lógica de tu aplicación, datos y contexto. Esto facilita el desarrollo de estados difíciles de alcanzar. Guarda estos estados de UI como **stories** para revisar durante el desarrollo, pruebas o control de calidad.
-
-Explora ejemplos de stories navegando por ellos en la barra lateral. Puedes ver el código en el directorio `stories` para aprender cómo funcionan. Recomendamos construir interfaces de usuario utilizando un enfoque [**component-driven**](https://componentdriven.org), comenzando con componentes atómicos y terminando en páginas.
-
-<div className="subheading">Configure</div>
+# Colores de prioridad
 
 <div className="link-list">
+  <h4>Este ToDo List cuenta con un formulario obligatorio para establecer un tiempo límite en cada tarea. La prioridad se asigna automáticamente según este tiempo. ¡Organiza tus tareas con mayor eficiencia y prioriza tus actividades de manera efectiva!</h4>
   <a
     className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
+    href=""
     target="_blank"
   >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets para herramientas populares</strong>
-      Configuración sencilla para TypeScript, SCSS y más.
-    </span>
+    <img src={PrioridadAlta} alt="PrioridadAlta" style={{ width: '40px' }} />
+
+    <h3>Tarea con fondo rojo.</h3>
+    <h4>Esta marcacion de prioridad es la mas alta y su rango de horas es de 0 a 3 horas.</h4>
   </a>
+
   <a
     className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
+    href=""
     target="_blank"
   >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Configuración de compilación</strong>
-      Cómo personalizar webpack y Babel
-    </span>
+    <img src={Reloj} alt="Reloj" style={{ width: '40px' }} />
+
+    <h3>Tarea con fondo anaranjado.</h3>
+    <h4>Esta marcacion de prioridad es la de nivel medio y su rango de horas es de 4 a 6 horas.</h4>
   </a>
+
   <a
     className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
+    href=""
     target="_blank"
   >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Estilos</strong>
-      Cómo cargar y configurar bibliotecas de CSS
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Datos</strong>
-      Proveedores y simulación de datos para bibliotecas de datos
-    </span>
+    <img src={Planta} alt="Planta" style={{ width: '40px' }} />
+
+    <h3>Tarea con fondo verde.</h3>
+    <h4>Esta marcacion de prioridad es la de nivel mas bajo y su rango de horas es de 7 horas para arriba.</h4>
   </a>
 </div>
 
-<div className="subheading">Learn</div>
+# Componentes
 
 <div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Documentación de Storybook</strong>
-      Configuración, personalización y extensión
-    </span>
-  </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>Guías detalladas</strong>
-      Mejores prácticas de equipos líderes
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
-      <strong>Proyecto en GitHub</strong>
-      Ver el código fuente y añadir problemas
-    </span>
-  </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Chat en Discord</strong>
-      Chatea con los responsables y la comunidad
-    </span>
-  </a>
+  <h4>Este proyecto cuenta con varios componentes, a nivel de funcionamiento o a nivel de diseño todos tienen un porque de estar, es por eso que explicare el funcionamiento de cada uno y cuales son sus respectivas historias.</h4>
+
+    <h3>Componente de bienvenida.</h3>
+    <h4>Este componente es unicamente un componente de diseño y se creo especialmente para rellenar el espacio vacio que existe entre los diferentes hidden.</h4>
+    <h5>Sus historias son:</h5>
+    <ul>
+      <li>Este componente solo cuenta con la historia "Default"</li>
+    </ul>
+
+    <h3>Componente de hidden.</h3>
+    <h4>Este componente es el encargado de mostrar el formulario en la pantalla con la ayuda de la propiedad de Html "Hidden"</h4>
+    <h5>Sus historias son:</h5>
+    <ul>
+      <li>En la historia "Default" Se encuentra el componente en su estado de reposo.</li>
+      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
+    </ul>
+
+    <h3>Componente de Tarea.</h3>
+    <h4>Este componente es el componente de la tarea, es decir que es donde se vera lo que nosotros pongamos dentro del formulario.</h4>
+    <h5>Sus historias son:</h5>
+    <ul>
+      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
+      <li>En la historia "Prioridad Alta" Se encuentra el componente con un estado de prioridad alta y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia "Prioridad Media" Se encuentra el componente con un estado de prioridad media y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia "Prioridad Baja" Se encuentra el componente con un estado de prioridad baja y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia "Prioridad Alta Completada" Se encuentra el componente con un estado de prioridad alta y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+      <li>En la historia "Prioridad Media Completada" Se encuentra el componente con un estado de prioridad media y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+      <li>En la historia "Prioridad Baja Completada" Se encuentra el componente con un estado de prioridad baja y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+    </ul>
+
+    <h3>Componente de Formulario.</h3>
+    <h4>Este es el componente encargado de manejar todo el funcionamiento de la pagina, ya que es componente que tiene acceso a los valores del input y puede interactuar con los mismos.</h4>
+    <h5>Sus historias son:</h5>
+    <ul>
+      <li>En la historia "Default" Se encuentra el componente en su estado de reposo.</li>
+      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
+    </ul>
 </div>
-
-<div className="tip-wrapper">
-  <span className="tip">Consejo</span> Editar el Markdown en{' '}
-  <code>stories/Introduction.stories.mdx</code>
-</div>
-
-## To-Do List con Prioridades
-
-Aquí puedes encontrar una lista de tareas (to-do list) con prioridades basadas en el tiempo. Puedes utilizar esto como referencia para desarrollar tus propias funcionalidades.
