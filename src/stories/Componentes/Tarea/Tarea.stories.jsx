@@ -1,5 +1,5 @@
 import React from 'react';
-import Tarea from './Componentes/Tarea';
+import Tarea from './Index';
 import { action } from '@storybook/addon-actions';
 
 export default {

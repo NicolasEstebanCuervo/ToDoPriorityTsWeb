@@ -1,5 +1,5 @@
 import React from 'react';
-import Hidden from './Componentes/Hidden';
+import Hidden from './Index';
 import { action } from '@storybook/addon-actions';
 
 export default {

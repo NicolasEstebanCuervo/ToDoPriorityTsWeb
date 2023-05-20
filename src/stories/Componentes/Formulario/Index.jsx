@@ -109,7 +109,7 @@ const IconoSalirFormulario = styled.i`
   }
 `
 
-function TareaFormulario({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,cambioTituloFnc,ponerHiddenFnc,hidden,cambioDescripcionFnc,className}) {
+function FormularioComponent({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,cambioTituloFnc,ponerHiddenFnc,hidden,cambioDescripcionFnc,className}) {
   const [errors, setErrors] = useState({
     titulo: null,
     descripcion: null,
@@ -121,13 +121,13 @@ function TareaFormulario({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,
 
     const newErrors = {};
     if (!titulo) {
-      newErrors.titulo = "Por favor, ingrese un título";
+      newErrors.titulo = 'Por favor, ingrese un título';
     }
     if (!descripcion) {
-      newErrors.descripcion = "Por favor, ingrese una descripción";
+      newErrors.descripcion = 'Por favor, ingrese una descripción';
     }
     if (!hora) {
-      newErrors.hora = "Por favor, ingrese una hora";
+      newErrors.hora = 'Por favor, ingrese una hora';
     }
 
     if (Object.keys(newErrors).length > 0) {
@@ -187,16 +187,16 @@ function TareaFormulario({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,
           </ContenedorInputIndividual>
         </ContenedorInputs>
 
-        <BotonEnviar type="submit" className={className}>Agregar tarea</BotonEnviar>
+        <BotonEnviar type='submit' className={className}>Agregar tarea</BotonEnviar>
 
-        <IconoSalirFormulario className="icono_salir_formulario" onClick={ponerHiddenFnc}><BiX /></IconoSalirFormulario>
+        <IconoSalirFormulario className='icono_salir_formulario' onClick={ponerHiddenFnc}><BiX /></IconoSalirFormulario>
       </Formulario>
     </ContenedorFormulario>
   );
 } 
 
-TareaFormulario.propTypes = {
+FormularioComponent.propTypes = {
   errors: PropTypes.bool.isRequired
 };
 
-export default TareaFormulario;
+export default FormularioComponent;

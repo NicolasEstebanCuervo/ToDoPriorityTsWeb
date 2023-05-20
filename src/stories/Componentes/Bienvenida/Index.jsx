@@ -15,7 +15,7 @@ const ContenedorBienvenida = styled.div`
   box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 1);
   font-family: Roboto, sans-serif;
   &:before{
-    content: "";
+    content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;

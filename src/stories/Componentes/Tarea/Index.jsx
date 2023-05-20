@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled'
 import { BiCheck, BiX } from 'react-icons/bi';
 
 const ContenedorTarea = styled.div`
@@ -131,8 +131,8 @@ function Tarea({ id, descripcion, time, titulo, completada, prioridad, completar
         <ContenedorTitulo>
           <Titulo>{titulo}</Titulo>
           <ContenedorIconos>
-            <BiCheck className="icono" onClick={() => completarTareaFnc(id)} />
-            <BiX className="icono" onClick={() => eliminarTareaFnc(id)} />
+            <BiCheck className='icono' onClick={() => completarTareaFnc(id)} />
+            <BiX className='icono' onClick={() => eliminarTareaFnc(id)} />
           </ContenedorIconos>
         </ContenedorTitulo>
         <ContenedorDescripcion>

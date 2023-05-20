@@ -1,12 +1,12 @@
 
 import React from 'react';
-import Bienvenida from './Componentes/Bienvenida';
+import Bienvenida from './Index';
 
 export default {
-  title: "Contenedor",
+  title: 'Contenedor',
   component: Bienvenida,
   args: {
-    textoBienvenida: "No hay tareas por ahora :)"
+    textoBienvenida: 'No hay tareas por ahora :)'
   }
 }
 

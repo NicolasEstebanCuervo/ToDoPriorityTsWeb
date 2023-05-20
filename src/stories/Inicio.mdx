@@ -1,45 +1,45 @@
 import { Meta } from '@storybook/blocks';
-import PrioridadAlta from "./assets/PrioridadAlta.svg"
-import Reloj from "./assets/Reloj.svg"
-import Planta from "./assets/Planta.svg"
+import PrioridadAlta from './assets/PrioridadAlta.svg'
+import Reloj from './assets/Reloj.svg'
+import Planta from './assets/Planta.svg'
 
-<Meta title="Documentacion" />
+<Meta title='Documentacion' />
 # To - Do List con prioridad de tiempo.
 
 Este es un Todo List diseñado para simplificar la gestión de tareas. Permite a los usuarios organizar sus actividades diarias de manera eficiente, asignando prioridades basadas en el tiempo. Con un enfoque intuitivo y una interfaz fácil de usar, esta aplicación facilita el seguimiento y completado de tareas importantes. ¡Mejora tu productividad y alcanza tus metas con este práctico Todo List!
 
 # Colores de prioridad
 
-<div className="link-list">
+<div className='link-list'>
   <h4>Este ToDo List cuenta con un formulario obligatorio para establecer un tiempo límite en cada tarea. La prioridad se asigna automáticamente según este tiempo. ¡Organiza tus tareas con mayor eficiencia y prioriza tus actividades de manera efectiva!</h4>
   <a
-    className="link-item"
-    href=""
-    target="_blank"
+    className='link-item'
+    href=''
+    target='_blank'
   >
-    <img src={PrioridadAlta} alt="PrioridadAlta" style={{ width: '40px' }} />
+    <img src={PrioridadAlta} alt='PrioridadAlta' style={{ width: '40px' }} />
 
     <h3>Tarea con fondo rojo.</h3>
     <h4>Esta marcacion de prioridad es la mas alta y su rango de horas es de 0 a 3 horas.</h4>
   </a>
 
   <a
-    className="link-item"
-    href=""
-    target="_blank"
+    className='link-item'
+    href=''
+    target='_blank'
   >
-    <img src={Reloj} alt="Reloj" style={{ width: '40px' }} />
+    <img src={Reloj} alt='Reloj' style={{ width: '40px' }} />
 
     <h3>Tarea con fondo anaranjado.</h3>
     <h4>Esta marcacion de prioridad es la de nivel medio y su rango de horas es de 4 a 6 horas.</h4>
   </a>
 
   <a
-    className="link-item"
-    href=""
-    target="_blank"
+    className='link-item'
+    href=''
+    target='_blank'
   >
-    <img src={Planta} alt="Planta" style={{ width: '40px' }} />
+    <img src={Planta} alt='Planta' style={{ width: '40px' }} />
 
     <h3>Tarea con fondo verde.</h3>
     <h4>Esta marcacion de prioridad es la de nivel mas bajo y su rango de horas es de 7 horas para arriba.</h4>
@@ -48,42 +48,42 @@ Este es un Todo List diseñado para simplificar la gestión de tareas. Permite a
 
 # Componentes
 
-<div className="link-list">
+<div className='link-list'>
   <h4>Este proyecto cuenta con varios componentes, a nivel de funcionamiento o a nivel de diseño todos tienen un porque de estar, es por eso que explicare el funcionamiento de cada uno y cuales son sus respectivas historias.</h4>
 
     <h3>Componente de bienvenida.</h3>
     <h4>Este componente es unicamente un componente de diseño y se creo especialmente para rellenar el espacio vacio que existe entre los diferentes hidden.</h4>
     <h5>Sus historias son:</h5>
     <ul>
-      <li>Este componente solo cuenta con la historia "Default"</li>
+      <li>Este componente solo cuenta con la historia 'Default'</li>
     </ul>
 
     <h3>Componente de hidden.</h3>
-    <h4>Este componente es el encargado de mostrar el formulario en la pantalla con la ayuda de la propiedad de Html "Hidden"</h4>
+    <h4>Este componente es el encargado de mostrar el formulario en la pantalla con la ayuda de la propiedad de Html 'Hidden'</h4>
     <h5>Sus historias son:</h5>
     <ul>
-      <li>En la historia "Default" Se encuentra el componente en su estado de reposo.</li>
-      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
+      <li>En la historia 'Default' Se encuentra el componente en su estado de reposo.</li>
+      <li>En la historia 'Hover Active' Se encuentra el componente con los estilos de la seudoclase 'Hover' Activa.</li>
     </ul>
 
     <h3>Componente de Tarea.</h3>
     <h4>Este componente es el componente de la tarea, es decir que es donde se vera lo que nosotros pongamos dentro del formulario.</h4>
     <h5>Sus historias son:</h5>
     <ul>
-      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
-      <li>En la historia "Prioridad Alta" Se encuentra el componente con un estado de prioridad alta y el respectivo color de su prioridad establecido.</li>
-      <li>En la historia "Prioridad Media" Se encuentra el componente con un estado de prioridad media y el respectivo color de su prioridad establecido.</li>
-      <li>En la historia "Prioridad Baja" Se encuentra el componente con un estado de prioridad baja y el respectivo color de su prioridad establecido.</li>
-      <li>En la historia "Prioridad Alta Completada" Se encuentra el componente con un estado de prioridad alta y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
-      <li>En la historia "Prioridad Media Completada" Se encuentra el componente con un estado de prioridad media y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
-      <li>En la historia "Prioridad Baja Completada" Se encuentra el componente con un estado de prioridad baja y con la clase de Css "Completada". Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+      <li>En la historia 'Hover Active' Se encuentra el componente con los estilos de la seudoclase 'Hover' Activa.</li>
+      <li>En la historia 'Prioridad Alta' Se encuentra el componente con un estado de prioridad alta y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia 'Prioridad Media' Se encuentra el componente con un estado de prioridad media y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia 'Prioridad Baja' Se encuentra el componente con un estado de prioridad baja y el respectivo color de su prioridad establecido.</li>
+      <li>En la historia 'Prioridad Alta Completada' Se encuentra el componente con un estado de prioridad alta y con la clase de Css 'Completada'. Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+      <li>En la historia 'Prioridad Media Completada' Se encuentra el componente con un estado de prioridad media y con la clase de Css 'Completada'. Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
+      <li>En la historia 'Prioridad Baja Completada' Se encuentra el componente con un estado de prioridad baja y con la clase de Css 'Completada'. Ademas de esto tambien tiene el respectivo color de su prioridad establecida.</li>
     </ul>
 
     <h3>Componente de Formulario.</h3>
     <h4>Este es el componente encargado de manejar todo el funcionamiento de la pagina, ya que es componente que tiene acceso a los valores del input y puede interactuar con los mismos.</h4>
     <h5>Sus historias son:</h5>
     <ul>
-      <li>En la historia "Default" Se encuentra el componente en su estado de reposo.</li>
-      <li>En la historia "Hover Active" Se encuentra el componente con los estilos de la seudoclase "Hover" Activa.</li>
+      <li>En la historia 'Default' Se encuentra el componente en su estado de reposo.</li>
+      <li>En la historia 'Hover Active' Se encuentra el componente con los estilos de la seudoclase 'Hover' Activa.</li>
     </ul>
 </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import TareaFormulario from './TareaFormulario';
-import Tarea from './Tarea';
-import { useTareaContext } from './FunctionContext';
+import Tarea from '../Tarea/Index';
+import FormularioComponent from '../Formulario/Index';
+import { useTareaContext } from '../Contextos/FunctionContext';
 import styled from '@emotion/styled'
 
 const ContenedorListaDeTareas = styled.div`
@@ -25,7 +25,7 @@ function ListaDeTareas() {
   } = useTareaContext();
   return (
     <div>
-      <TareaFormulario 
+      <FormularioComponent 
         manejarEnvioFnc={manejarEnvioFnc} 
         descripcion={descripcion} 
         cambioTimeFnc={cambioTimeFnc} 
