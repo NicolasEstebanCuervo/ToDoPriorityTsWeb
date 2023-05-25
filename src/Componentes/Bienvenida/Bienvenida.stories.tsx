@@ -1,5 +1,3 @@
-
-import React from 'react';
 import Bienvenida from './Index';
 
 export default {
@@ -10,6 +8,6 @@ export default {
   }
 }
 
-const Template = (args) => <Bienvenida {...args} />;
+const Template = (args: { textoBienvenida: string, hidden: boolean }) => <Bienvenida {...args} />
 
 export const Default = Template.bind({});

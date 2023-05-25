@@ -1,7 +1,6 @@
-import React from 'react';
 import Tarea from '../Tarea/Index';
 import FormularioComponent from '../Formulario/Index';
-import { useTareaContext } from '../Contextos/FunctionContext';
+import { useTareaContext } from '../../Contextos/FunctionContext';
 import styled from '@emotion/styled'
 
 const ContenedorListaDeTareas = styled.div`

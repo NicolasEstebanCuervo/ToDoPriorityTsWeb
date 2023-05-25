@@ -26,7 +26,12 @@ const IconoHidden = styled.span`
   }
 `;
 
-const Hidden = ({ className, onClick }) => {
+interface HiddenProps {
+  className?: string;
+  onClick: () => void;
+}
+
+const Hidden = ({ className, onClick }: HiddenProps) => {
   return (
     <>
       <IconoHidden className={className}>

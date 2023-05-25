@@ -1,16 +1,43 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useState, useContext, useEffect, ChangeEvent, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-const TareaContext = createContext();
+interface Tarea {
+  id: string;
+  titulo: string;
+  descripcion: string;
+  time: string;
+  hidden: boolean;
+  completada: boolean;
+}
 
-export const TareaProvider = ({ children }) => {
+export interface TareaContextProps {
+  titulo: string;
+  descripcion: string;
+  time: string;
+  hora: string;
+  hidden: boolean;
+  bienvenida: boolean;
+  quitarHiddenFnc: () => void;
+  ponerHiddenFnc: () => void;
+  cambioTituloFnc: (event: ChangeEvent<HTMLInputElement>) => void;
+  cambioDescripcionFnc: (event: ChangeEvent<HTMLInputElement>) => void;
+  cambioTimeFnc: (event: ChangeEvent<HTMLInputElement>) => void;
+  manejarEnvioFnc: () => void;
+  tareas: Tarea[];
+  eliminarTareaFnc: (id: string) => void;
+  completarTareaFnc: (id: string) => void;
+}
+
+const TareaContext = createContext<TareaContextProps | undefined>(undefined);
+
+export const TareaProvider = ({ children } : { children: ReactNode }) => {
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [time, setTime] = useState('');
   const [hora, setHora] = useState('');
   const [hidden, setHidden] = useState(true);
   const [bienvenida, setBienvenida] = useState(false);
-  const [tareas, setTareas] = useState([]);
+  const [tareas, setTareas] = useState<Tarea[]>([]);
 
   const quitarHiddenFnc = () => {
     if (hidden === true) {
@@ -28,17 +55,17 @@ export const TareaProvider = ({ children }) => {
     setBienvenida(tareas.length > 0);
   }, [tareas]);
 
-  const cambioTituloFnc = e => {
-    setTitulo(e.target.value);
+  const cambioTituloFnc = (event: ChangeEvent<HTMLInputElement>) => {
+    setTitulo(event.target.value);
   };
 
-  const cambioDescripcionFnc = e => {
-    setDescripcion(e.target.value);
+  const cambioDescripcionFnc = (event: ChangeEvent<HTMLInputElement>) => {
+    setDescripcion(event.target.value);
   };
 
-  const cambioTimeFnc = e => {
+  const cambioTimeFnc = (event: ChangeEvent<HTMLInputElement>) => {
     const horaActual = new Date().getHours();
-    const horaInput = parseInt(e.target.value);
+    const horaInput = parseInt(event.target.value);
 
     let horasDiferencia = Math.floor(horaInput - horaActual);
     if (horasDiferencia < 0) {
@@ -57,11 +84,11 @@ export const TareaProvider = ({ children }) => {
     } else {
       setTime('prioridad_baja');
     }
-    setHora(e.target.value);
+    setHora(event.target.value);
   };
 
-  const manejarEnvioFnc = e => {
-    const tareaNueva = {
+  const manejarEnvioFnc = () => {
+    const tareaNueva: Tarea = {
       id: uuidv4(),
       titulo: titulo,
       descripcion: descripcion,
@@ -75,19 +102,19 @@ export const TareaProvider = ({ children }) => {
     setHora('');
   };
 
-  const agregarTareaFnc = tarea => {
+  const agregarTareaFnc = (tarea: Tarea) => {
     if (tarea.descripcion.trim()) {
-      setTareas(tareas => {
+      setTareas((tareas) => {
         tarea.descripcion = tarea.descripcion.trim();
         tarea.titulo = tarea.titulo.trim();
         return [tarea, ...tareas];
       });
-      setBienvenida(true);
+      return(setBienvenida(true));
     }
   };
 
-  const eliminarTareaFnc = id => {
-    setTareas(tareas => tareas.filter(tarea => tarea.id !== id));
+  const eliminarTareaFnc = (id: string) => {
+    return(setTareas((tareas) => tareas.filter((tarea) => tarea.id !== id)));
   };
 
   useEffect(() => {
@@ -96,8 +123,8 @@ export const TareaProvider = ({ children }) => {
     }
   }, [tareas]);
 
-  const completarTareaFnc = id => {
-    const tareasActualizadas = tareas.map(tarea => {
+  const completarTareaFnc = (id: string) => {
+    const tareasActualizadas = tareas.map((tarea) => {
       if (tarea.id === id) {
         tarea.completada = !tarea.completada;
       }
@@ -130,7 +157,6 @@ export const TareaProvider = ({ children }) => {
     </TareaContext.Provider>
   );
 };
-
 export const useTareaContext = () => useContext(TareaContext);
 
 export default TareaContext;

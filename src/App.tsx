@@ -1,6 +1,5 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { TareaProvider } from './stories/Componentes/Contextos/FunctionContext';
-import Global from "./stories/Componentes/Global/Index"
+import { TareaProvider } from './Contextos/FunctionContext';
+import Global from "./Componentes/Global/Index"
 import styled from '@emotion/styled'
 
 const ContenedorApp = styled.div`

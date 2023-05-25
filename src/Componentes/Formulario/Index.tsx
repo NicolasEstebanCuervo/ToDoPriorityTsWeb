@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import styled from '@emotion/styled'
 import { BiX } from 'react-icons/bi';
 
@@ -109,17 +108,47 @@ const IconoSalirFormulario = styled.i`
   }
 `
 
-function FormularioComponent({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,hora,cambioTituloFnc,ponerHiddenFnc,hidden,cambioDescripcionFnc,className}) {
-  const [errors, setErrors] = useState({
+interface FormularioProps {
+  manejarEnvioFnc: () => void;
+  descripcion: string;
+  cambioTimeFnc: (e: ChangeEvent<HTMLInputElement>) => void;
+  titulo: string;
+  hora: string;
+  cambioTituloFnc: (e: ChangeEvent<HTMLInputElement>) => void;
+  ponerHiddenFnc: () => void;
+  hidden: boolean;
+  cambioDescripcionFnc: (e: ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
+}
+
+interface Errors {
+  titulo: string | null;
+  descripcion: string | null;
+  hora: string | null;
+}
+
+function FormularioComponent({
+  manejarEnvioFnc,
+  descripcion,
+  cambioTimeFnc,
+  titulo,
+  hora,
+  cambioTituloFnc,
+  ponerHiddenFnc,
+  hidden,
+  cambioDescripcionFnc,
+  className
+}: FormularioProps) {
+  const [errors, setErrors] = useState<Errors>({
     titulo: null,
     descripcion: null,
     hora: null
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const newErrors = {};
+  
+    const newErrors: Partial<Errors> = {};
     if (!titulo) {
       newErrors.titulo = 'Por favor, ingrese un título';
     }
@@ -129,21 +158,22 @@ function FormularioComponent({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,h
     if (!hora) {
       newErrors.hora = 'Por favor, ingrese una hora';
     }
-
+  
     if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+      setErrors(newErrors as Errors); 
       return;
     }
-
+  
     setErrors({
       titulo: null,
       descripcion: null,
       hora: null
     });
-
+  
     manejarEnvioFnc()
     ponerHiddenFnc();
   };
+  
 
   return (
     <ContenedorFormulario hidden={hidden}>
@@ -194,9 +224,4 @@ function FormularioComponent({manejarEnvioFnc,descripcion,cambioTimeFnc,titulo,h
     </ContenedorFormulario>
   );
 } 
-
-FormularioComponent.propTypes = {
-  errors: PropTypes.bool.isRequired
-};
-
 export default FormularioComponent;

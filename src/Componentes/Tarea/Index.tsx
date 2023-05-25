@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from '@emotion/styled'
+import { HTMLAttributes } from 'react';
+import styled from '@emotion/styled';
 import { BiCheck, BiX } from 'react-icons/bi';
 
-const ContenedorTarea = styled.div`
+const ContenedorTarea = styled.div<ContenedorTareaProps>`
   width: 600px;
   min-height: 250px;
   margin: 20% auto;
@@ -14,18 +13,18 @@ const ContenedorTarea = styled.div`
   position: relative;
   color: #fff;
   font-family: Roboto, sans-serif;
-  -webkit-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
-  -moz-box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
-  box-shadow: 0px 0px 58px -24px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 58px -24px rgba(0, 0, 0, 1);
   &:hover .icono {
     opacity: 1;
     transition: opacity 0.4s ease;
   }
 
-  &.hover .icono{
+  &.hover .icono {
     opacity: 1;
     transition: opacity 0.4s ease;
-  }   
+  }
 
   .icono {
     opacity: 0;
@@ -37,12 +36,13 @@ const ContenedorTarea = styled.div`
   }
 
   ${props =>
-  props.completada && props.time && `
+    props.completada && props.time &&
+    `
     &.completada_${props.time} {
       background-color: ${props.time === 'prioridad_alta' ? '#ff3f3f' : (props.time === 'prioridad_media' ? '#f8825b' : (props.time === 'prioridad_baja' ? '#34e265' : '#b32f2f'))};
       text-decoration: line-through;
     }
-`}
+  `}
 
   ${props =>
     props.time === 'prioridad_alta' &&
@@ -82,7 +82,7 @@ const ContenedorTitulo = styled.div`
 
 const Titulo = styled.h1`
   font-size: 30px;
-  margin:auto 0;
+  margin: auto 0;
   &::first-letter {
     text-transform: uppercase;
   }
@@ -119,7 +119,25 @@ const Descripcion = styled.h1`
   }
 `;
 
-function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc, className }) {
+export interface tareaProps {
+  id: string;
+  descripcion: string;
+  time?: string;
+  titulo: string;
+  completada: boolean;
+  prioridad?: string;
+  completarTareaFnc: (id: string) => void;
+  eliminarTareaFnc: (id: string) => void;
+  className?: string;
+}
+
+interface ContenedorTareaProps extends HTMLAttributes<HTMLDivElement> {
+  completada?: boolean;
+  time?: string;
+  prioridad?: string;
+}
+
+function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc, className }: tareaProps) {
   return (
     <ContenedorTarea
       className={`tarea_contenedor ${className} ${time} ${completada ? `completada_${time}` : ''} `}
@@ -142,12 +160,5 @@ function Tarea({ id, descripcion, time, titulo, completada, prioridad, completar
     </ContenedorTarea>
   );
 }
-
-Tarea.propTypes = {
-  descripcion: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
-  titulo: PropTypes.string.isRequired,
-  completada: PropTypes.bool.isRequired,
-};
 
 export default Tarea;

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled'
 
@@ -31,18 +30,14 @@ const TextoBienvenida = styled.h1`
   @media (max-width: 700px) {
     font-size: 5vw;
   }
-`
+` 
 
-const Bienvenida = ({ textoBienvenida, hidden}) => {
+const Bienvenida = ({textoBienvenida, hidden} : {textoBienvenida:string, hidden:boolean}) => {
   return (
     <ContenedorBienvenida hidden={hidden}>
       <TextoBienvenida>{textoBienvenida}</TextoBienvenida>
     </ContenedorBienvenida>
   );
-};
-
-Bienvenida.propTypes = {
-  textoBienvenida: PropTypes.string.isRequired
 };
 
 export default Bienvenida;
