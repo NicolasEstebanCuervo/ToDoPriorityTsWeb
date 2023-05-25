@@ -7,7 +7,7 @@ export default {
   component: Tarea,
 };
 
-interface ContenedorTareaProps extends HTMLAttributes<HTMLDivElement> {
+interface ContenedorTareaProps {
   completada?: boolean;
   time?: string;
   prioridad?: string;

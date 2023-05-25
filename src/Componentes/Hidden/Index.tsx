@@ -1,4 +1,3 @@
-import React from 'react';
 import { RiAddFill } from 'react-icons/ri';
 import styled from '@emotion/styled';
 

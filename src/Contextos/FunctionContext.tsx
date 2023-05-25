@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect, ChangeEvent, ReactNode } from 'react';
+import { createContext, useState, useContext, useEffect, ChangeEvent, ReactNode } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 interface Tarea {

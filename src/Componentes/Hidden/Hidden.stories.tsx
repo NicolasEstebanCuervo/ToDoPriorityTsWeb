@@ -6,12 +6,7 @@ export default {
   component: Hidden,
 };
 
-interface HiddenProps {
-  className?: string;
-  onClick?: () => void;
-}
-
-const Template = (args: HiddenProps) => (
+const Template = (args : {className?:string}) => (
   <Hidden {...args} onClick={action('Se abrió el formulario')} />
 );
 

@@ -6,8 +6,14 @@ import styled from '@emotion/styled'
 const ContenedorListaDeTareas = styled.div`
   margin: 15px;
 `
-
 function ListaDeTareas() {
+
+  const context = useTareaContext();
+
+  if (!context) {
+    return null;
+  }
+
   const {
     manejarEnvioFnc,
     descripcion,
@@ -21,7 +27,7 @@ function ListaDeTareas() {
     tareas,
     eliminarTareaFnc,
     completarTareaFnc,
-  } = useTareaContext();
+  } = context;;
   return (
     <div>
       <FormularioComponent 

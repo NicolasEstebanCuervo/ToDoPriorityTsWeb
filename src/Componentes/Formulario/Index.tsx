@@ -121,7 +121,7 @@ interface FormularioProps {
   className?: string;
 }
 
-interface Errors {
+interface ErrorsProps {
   titulo: string | null;
   descripcion: string | null;
   hora: string | null;
@@ -138,8 +138,10 @@ function FormularioComponent({
   hidden,
   cambioDescripcionFnc,
   className
-}: FormularioProps) {
-  const [errors, setErrors] = useState<Errors>({
+}: FormularioProps) 
+
+{
+  const [errors, setErrors] = useState<ErrorsProps>({
     titulo: null,
     descripcion: null,
     hora: null
@@ -148,7 +150,8 @@ function FormularioComponent({
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    const newErrors: Partial<Errors> = {};
+    const newErrors: Partial<ErrorsProps> = {};
+    
     if (!titulo) {
       newErrors.titulo = 'Por favor, ingrese un título';
     }
@@ -160,7 +163,7 @@ function FormularioComponent({
     }
   
     if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors as Errors); 
+      setErrors(newErrors as ErrorsProps); 
       return;
     }
   
@@ -177,7 +180,7 @@ function FormularioComponent({
 
   return (
     <ContenedorFormulario hidden={hidden}>
-      <Formulario onSubmit={handleSubmit} noValidate>
+      <Formulario onSubmit={handleSubmit} >
         <TituloFormulario>To-Do List</TituloFormulario>
         <ContenedorInputs>
           <ContenedorInputIndividual>

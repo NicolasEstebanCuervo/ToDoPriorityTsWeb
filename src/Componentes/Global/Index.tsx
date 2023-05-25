@@ -3,11 +3,6 @@ import Bienvenida from '../Bienvenida/Index';
 import ListaDeTareas from '../ListaDeTareas/Index';
 import { useTareaContext } from '../../Contextos/FunctionContext';
 
-interface LocalContextProps {
-  bienvenida: boolean;
-  quitarHiddenFnc: () => void;
-}
-
 const Global = () => {
   const context = useTareaContext();
 
@@ -27,5 +22,5 @@ const Global = () => {
     </>
   );
 };
-
+ 
 export default Global;
