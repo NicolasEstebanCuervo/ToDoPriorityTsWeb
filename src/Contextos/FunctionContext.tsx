@@ -17,13 +17,13 @@ export interface TareaContextProps {
   hora: string;
   hidden: boolean;
   bienvenida: boolean;
+  tareas: Tarea[];
   quitarHiddenFnc: () => void;
   ponerHiddenFnc: () => void;
   cambioTituloFnc: (event: ChangeEvent<HTMLInputElement>) => void;
   cambioDescripcionFnc: (event: ChangeEvent<HTMLInputElement>) => void;
   cambioTimeFnc: (event: ChangeEvent<HTMLInputElement>) => void;
   manejarEnvioFnc: () => void;
-  tareas: Tarea[];
   eliminarTareaFnc: (id: string) => void;
   completarTareaFnc: (id: string) => void;
 }

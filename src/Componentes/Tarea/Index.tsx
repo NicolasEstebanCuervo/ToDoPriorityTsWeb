@@ -1,6 +1,37 @@
-import { HTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 import { BiCheck, BiX } from 'react-icons/bi';
+
+interface ContenedorTareaProps{
+  completada?: boolean;
+  time?: string;
+  prioridad?: string;
+}
+
+function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc, className }: tareaProps) {
+  return (
+    <ContenedorTarea
+      className={`tarea_contenedor ${className} ${time} ${completada ? `completada_${time}` : ''} `}
+      completada={completada}
+      time={time}
+      prioridad={prioridad}
+    >
+      <ContenedorTextosTarea>
+        <ContenedorTitulo>
+          <Titulo>{titulo}</Titulo>
+          <ContenedorIconos>
+            <BiCheck className='icono' onClick={() => completarTareaFnc(id)} />
+            <BiX className='icono' onClick={() => eliminarTareaFnc(id)} />
+          </ContenedorIconos>
+        </ContenedorTitulo>
+        <ContenedorDescripcion>
+          <Descripcion>{descripcion}</Descripcion>
+        </ContenedorDescripcion>
+      </ContenedorTextosTarea>
+    </ContenedorTarea>
+  );
+}
+
+export default Tarea;
 
 const ContenedorTarea = styled.div<ContenedorTareaProps>`
   width: 600px;
@@ -130,35 +161,3 @@ export interface tareaProps {
   eliminarTareaFnc: (id: string) => void;
   className?: string;
 }
-
-interface ContenedorTareaProps extends HTMLAttributes<HTMLDivElement> {
-  completada?: boolean;
-  time?: string;
-  prioridad?: string;
-}
-
-function Tarea({ id, descripcion, time, titulo, completada, prioridad, completarTareaFnc, eliminarTareaFnc, className }: tareaProps) {
-  return (
-    <ContenedorTarea
-      className={`tarea_contenedor ${className} ${time} ${completada ? `completada_${time}` : ''} `}
-      completada={completada}
-      time={time}
-      prioridad={prioridad}
-    >
-      <ContenedorTextosTarea>
-        <ContenedorTitulo>
-          <Titulo>{titulo}</Titulo>
-          <ContenedorIconos>
-            <BiCheck className='icono' onClick={() => completarTareaFnc(id)} />
-            <BiX className='icono' onClick={() => eliminarTareaFnc(id)} />
-          </ContenedorIconos>
-        </ContenedorTitulo>
-        <ContenedorDescripcion>
-          <Descripcion>{descripcion}</Descripcion>
-        </ContenedorDescripcion>
-      </ContenedorTextosTarea>
-    </ContenedorTarea>
-  );
-}
-
-export default Tarea;

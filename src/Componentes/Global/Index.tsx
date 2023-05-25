@@ -1,6 +1,6 @@
-import Hidden from '../Hidden/Index';
-import Bienvenida from '../Bienvenida/Index';
-import ListaDeTareas from '../ListaDeTareas/Index';
+import Hidden from '../Hidden';
+import Bienvenida from '../Bienvenida';
+import ListaDeTareas from '../ListaDeTareas';
 import { useTareaContext } from '../../Contextos/FunctionContext';
 
 const Global = () => {
@@ -22,5 +22,5 @@ const Global = () => {
     </>
   );
 };
- 
+
 export default Global;

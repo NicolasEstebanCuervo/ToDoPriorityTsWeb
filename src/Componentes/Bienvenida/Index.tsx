@@ -1,5 +1,15 @@
 import styled from '@emotion/styled'
 
+const Bienvenida = ({textoBienvenida, hidden} : {textoBienvenida:string, hidden:boolean}) => {
+  return (
+    <ContenedorBienvenida hidden={hidden}>
+      <TextoBienvenida>{textoBienvenida}</TextoBienvenida>
+    </ContenedorBienvenida>
+  );
+};
+
+export default Bienvenida;
+
 const ContenedorBienvenida = styled.div`
   margin:auto;
   width: 70vw;
@@ -30,13 +40,3 @@ const TextoBienvenida = styled.h1`
     font-size: 5vw;
   }
 ` 
-
-const Bienvenida = ({textoBienvenida, hidden} : {textoBienvenida:string, hidden:boolean}) => {
-  return (
-    <ContenedorBienvenida hidden={hidden}>
-      <TextoBienvenida>{textoBienvenida}</TextoBienvenida>
-    </ContenedorBienvenida>
-  );
-};
-
-export default Bienvenida;

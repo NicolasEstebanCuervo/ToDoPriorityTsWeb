@@ -1,11 +1,8 @@
-import Tarea from '../Tarea/Index';
-import FormularioComponent from '../Formulario/Index';
+import Tarea from '../Tarea';
+import FormularioComponent from '../Formulario';
 import { useTareaContext } from '../../Contextos/FunctionContext';
 import styled from '@emotion/styled'
 
-const ContenedorListaDeTareas = styled.div`
-  margin: 15px;
-`
 function ListaDeTareas() {
 
   const context = useTareaContext();
@@ -60,3 +57,7 @@ function ListaDeTareas() {
 }
 
 export default ListaDeTareas;
+
+const ContenedorListaDeTareas = styled.div`
+  margin: 15px;
+`

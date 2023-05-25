@@ -1,4 +1,4 @@
-import Hidden from './Index';
+import Hidden from '.';
 import { action } from '@storybook/addon-actions';
 
 export default {

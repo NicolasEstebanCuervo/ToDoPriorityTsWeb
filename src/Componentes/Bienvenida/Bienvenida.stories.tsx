@@ -1,4 +1,4 @@
-import Bienvenida from './Index';
+import Bienvenida from '.';
 
 export default {
   title: 'Contenedor',
