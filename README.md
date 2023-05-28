@@ -1,7 +1,7 @@
 <div id="Header" align="center">
 
    <img src="https://media.giphy.com/media/kR4Hv9lSy5ptAnck0u/giphy.gif" width="300">   
-   <h1 align="center">To - Do Priority 📋 - Trasladando a React Native</h1>
+   <h1 align="center">To - Do Priority 📋 - Finalizado</h1>
 
 </div>
    
