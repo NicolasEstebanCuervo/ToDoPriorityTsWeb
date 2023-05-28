@@ -9,7 +9,7 @@
 
 - Abra la terminal de su computador.
 - Entre al directorio de su preferencia usando (cd "nombre del directorio")
-- Si usted tiene una clave SSH ejecute el comando "git clone git@github.com:NicolasEstebanCuervo/News.git"
+- Si usted tiene una clave SSH ejecute el comando "git@github.com:NicolasEstebanCuervo/ToDoPriorityTsWeb.git"
 - Abra el repositorio clonado en su editor de codigo de preferencia.
 - En la terminal del editor de codigo ejecute el comando "npm start".
 
