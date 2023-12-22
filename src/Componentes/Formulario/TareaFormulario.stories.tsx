@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import FormularioComponent from '.';
+import FormularioComponent from './Index';
 import { action } from '@storybook/addon-actions';
 import { contextoStory } from '../../Contextos/ContextoStory';
 

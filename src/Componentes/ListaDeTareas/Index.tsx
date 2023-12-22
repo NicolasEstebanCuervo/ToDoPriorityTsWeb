@@ -1,5 +1,5 @@
-import Tarea from '../Tarea';
-import FormularioComponent from '../Formulario';
+import Tarea from '../Tarea/Index';
+import FormularioComponent from '../Formulario/Index';
 import { useTareaContext } from '../../Contextos/FunctionContext';
 import styled from '@emotion/styled'
 

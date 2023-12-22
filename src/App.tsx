@@ -1,5 +1,5 @@
+import Global from './Componentes/Global/Index';
 import { TareaProvider } from './Contextos/FunctionContext';
-import Global from "./Componentes/Global"
 import styled from '@emotion/styled'
 
 function App() {

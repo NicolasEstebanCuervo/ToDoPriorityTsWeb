@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react';
-import Tarea from '.';
+import Tarea from './Index';
 import { action } from '@storybook/addon-actions';
 
 export default {
